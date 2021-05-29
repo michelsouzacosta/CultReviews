@@ -100,6 +100,6 @@ public class UsuarioController {
 			e.printStackTrace();
 		}
 		
-		return "redirect:/home";
+		return "redirect:/";
 	}
 }
