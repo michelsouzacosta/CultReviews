@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: cabecalho}">
+<title>Filmes</title>
+</head>
+<style>
+.nota{
+	color: #8BC6EC !important;
+	font-size: 1.5rem;
+	text-align: center;
+	display: block;
+	text-shadow: 2px 2px 2px  black;
+}
+.elenco{
+	font-size: 0.8rem;
+	display: flex;
+	flex-direction: column;
+}
+.informacoes{
+display: flex;
+justify-content: space-between;
+}
+.container{
+	display: flex;
+	flex-direction:row;
+	overflow: auto;
+	max-width:80%;
+	border-radius: 4px;
+}
+.ajuste{
+	margin-right: 16px;
+	min-width: 18rem;
+	max-width: 18rem;
+}
+</style>
+<body>
+	<nav th:replace="~{base :: navbar}">Navbar</nav>
+	<div class="container">	
+<div class="card ajuste" th:each="filme : ${filmes}">
+  <img class="card-img-top" th:src="${filme.url}" alt="imagem">
+  <a class=" btn-comentario" th:href="@{'/filmes/comentarios/' + ${filme.titulo}}">Comentarios</a>
+  <div class="card-body" >
+    <h5 class="card-title" th:text="${filme.titulo}">Card title</h5>
+    <p class="card-text" th:text="${filme.sinopse}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+ 	<div class="informacoes">
+ 	<div class="elenco">
+ 		Diretor: <span th:text="${filme.diretor}">diretor</span>
+ 		Elenco: <span th:text="${filme.elencoPrincipal}">joao bidulinho</span>
+ 	</div>
+ 	<div class="elenco">
+ 		Lançamento: <span th:text="${filme.ano}">diretor</span>
+ 		País: <span th:text="${filme.pais}">joao bidulinho</span>
+ 	</div>
+ 	</div>
+ 	<span class="nota">Nota:<span th:text="${filme.nota}">10</span></span>
+    <a th:href="@{'/filmes/nota/' + ${filme.titulo}}" class="btn btn-warning btn-block">Avaliar</a>
+  </div>
+</div>
+
+
+	
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="~{base :: cabecalho}"></head>
+<body>
+	<div th:replace="~{base :: navbar}">
+	
+	</div>
+
+	<div class="container d-flex justify-content-center">
+		
+		<div class="col-md-6">
+	<div class="jumbotron mb-3">
+		<h1 class="display-4">Atualizar Perfil</h1>
+		
+	</div>
+		<form th:object="${usuario}" action="/usuario/perfil" method="POST" >
+			<div >
+				<label>Nome de usuário</label>
+				<input class="form-control" th:field="*{nomeUsuario}" name="nomeUsuario" type="text" placeholder="Nome de usuário." readonly="readonly" />
+			</div >
+			<div  class="form-group">
+				<label>Nome completo.</label>
+				<input class="form-control" th:field="*{nome}"name="nome" type="text" placeholder="Nome completo" />
+			</div  >
+			<div  class="form-group">
+				<label>Data de nascimento</label>
+				<input class="form-control"  th:value="${dataNasc}" name="dataNascimento" type="date" placeholder="Data de nascimento." />
+			</div>
+			<div  class="form-group">
+				<label>Estado</label>
+				<input class="form-control" th:field="*{estado}"  name="estado" type="text" placeholder="Digite o nome do estado em que reside." />
+			</div>
+			<div  class="form-group">
+				<label>Cidade</label>
+				<input class="form-control" th:field="*{cidade}"  name="cidade" type="text" placeholder="Digite o nome da cidade em que reside." />
+			</div>
+			<button class="btn btn-outline-success"type="submit">Atualizar</button>
+		</form>
+	</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

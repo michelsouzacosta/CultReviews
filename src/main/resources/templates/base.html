@@ -1,0 +1,63 @@
+<head th:fragment="cabecalho">
+<meta charset="UTF-8">
+<title>Perfil</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/navbar.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=RocknRoll+One&display=swap"
+	rel="stylesheet">
+</head>
+<!-- Barra de navegação da aplicação -->
+<nav th:fragment="navbar">
+	<a href="/" style="text-decoration: none;">
+		<h1>CultReview</h1>
+	</a>
+	<ul>
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-outline-secondary dropdown-toggle" type="button"
+					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">Filmes</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="/filmes/cadastrar">Novo Filme</a> <a
+						class="dropdown-item" href="/filmes/meus">Meus Filmes</a> <a
+						class="dropdown-item" href="/filmes">Todos os Filmes</a>
+				</div>
+			</div>
+		</li>
+		<li>
+		<div class="dropdown">
+				<button class="btn btn-outline-secondary dropdown-toggle" type="button"
+					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">Livros</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="/livros/cadastrar">Novo Livro</a> <a
+						class="dropdown-item" href="/livros/meus">Meus Livros</a> <a
+						class="dropdown-item" href="/livros">Todos os Livros</a>
+				</div>
+			</div>
+		</li>
+		<li>
+		<div class="dropdown">
+				<button class="btn btn-outline-secondary dropdown-toggle" type="button"
+					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">Series</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="/series/cadastrar">Nova Serie</a> <a
+						class="dropdown-item" href="/series/meus">Minhas Series</a> <a
+						class="dropdown-item" href="/series">Todas as Series</a>
+				</div>
+			</div>
+		</li>
+		<li><a href="/usuario/perfil" class="btn btn-outline-secondary">Perfil</a></li>
+	</ul>
+	<a href="/logout" class="logout btn btn-outline-warning ">Logout</a>
+</nav>
